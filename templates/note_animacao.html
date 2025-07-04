@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Notebook com Código</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+      font-family: monospace;
+    }
+
+    .notebook {
+      width: 320px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .screen {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      border: 4px solid #444;
+      border-radius: 8px 8px 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: bottom;
+      transform: rotateX(90deg);
+      transition: transform 1s ease;
+      overflow: hidden;
+      box-shadow: inset 0 0 20px #0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 10px;
+    }
+
+    .keyboard {
+      width: 100%;
+      height: 20px;
+      background: #555;
+      border-radius: 0 0 8px 8px;
+      position: absolute;
+      top: 100%;
+      box-shadow: 0 4px 10px #000;
+    }
+
+    .base {
+      width: 100%;
+      height: 15px;
+      background: #2a2a2a;
+      border-radius: 0 0 8px 8px;
+      position: absolute;
+      top: calc(100% + 20px);
+      box-shadow: 0 4px 10px #000;
+    }
+
+    .notebook.open .screen {
+      transform: rotateX(0deg);
+    }
+
+    .code {
+      color: #0f0;
+      font-size: 12px;
+      line-height: 1.2;
+      white-space: pre;
+      animation: scrollCode 5s linear infinite;
+    }
+
+    @keyframes scrollCode {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="notebook" onclick="this.classList.toggle('open')">
+    <div class="screen">
+      <div class="code">
+        loading system...\n
+        boot sequence initiated...\n
+        connecting to kernel...\n
+        system check: OK\n
+        initializing modules...\n
+        > compiling: engine.cpp\n
+        > compiling: brain.js\n
+        > compiling: gpt_model.py\n
+        memory check: 8192MB OK\n
+        security check: passed\n
+        GPU online\n
+        launching interface...\n
+        Hello, World!\n
+        >>> _\n
+      </div>
+    </div>
+    <div class="keyboard"></div>
+    <div class="base"></div>
+  </div>
+
+</body>
+</html>
