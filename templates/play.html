@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='play.css') }}">
+  <title>Play</title>
+</head>
+<body>
+
+  <div class="canvas-row">
+    <!-- CANVAS  -->
+    <div class="canvas_conteiner1">
+      <canvas id="canvas1" width="320" height="160"></canvas>
+      <div id="hover1" class="hover-area">
+        <a id = "clickMe"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // ==== SPRITE: play.png ====
+    const canvas1 = document.getElementById('canvas1');
+    const ctx1 = canvas1.getContext('2d');
+    const img1 = new Image();
+    img1.src = '../static/assets/Play.png';
+    const SPRITE_WIDTH = 160;
+    const SPRITE_HEIGHT = 160;
+    let col1 = 0;
+
+    img1.onload = () => drawSprite1();
+
+    function drawSprite1() {
+      ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
+      ctx1.drawImage(img1, col1 * SPRITE_WIDTH, 0, SPRITE_WIDTH, SPRITE_HEIGHT, 0, 0, SPRITE_WIDTH, SPRITE_HEIGHT);
+    }
+
+    const hover1 = document.getElementById('hover1');
+    hover1.addEventListener('mouseenter', () => {
+      col1 = 1;
+      drawSprite1();
+    });
+    hover1.addEventListener('mouseleave', () => {
+      col1 = 0;
+      drawSprite1();
+    });
+
+    const clickMe = document.getElementById('clickMe');
+    clickMe.style.cursor = 'pointer';  // muda o cursor pra indicar que é clicável
+
+    clickMe.addEventListener('click', () => {
+      window.location.href = "{{ url_for('inicio') }}";
+    });
+  </script>
+</body>
+</html>

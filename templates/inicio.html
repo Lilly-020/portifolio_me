@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
+  <title>Loading</title>
 </head>
 <body>
-    <div>
-        <h1>Hello my name is....</h1>
-    </div>
-    <div>
-        <img src="" alt="">
-    </div>
-    <div>
-        <h3>text goes here!!</h3>
-    </div>
-    <div>
-        <button>next</button>
-    </div>
+  <canvas id="spriteCanvas" width="360" height="360"></canvas>
+
+<script>
+  const canvas = document.getElementById('spriteCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const spriteSheet = new Image();
+  spriteSheet.src = '../static/assets/Heart.png'; // Caminho correto
+
+  const spriteWidth = 160;
+  const spriteHeight = 360;
+  const totalFrames = 25;
+  let currentFrame = 0;
+  const frameSpeed = 50;
+
+  let animationInterval;
+
+  function drawSprite() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      spriteSheet,
+      currentFrame * spriteWidth, 0,
+      spriteWidth, spriteHeight,
+      100, 100,
+      spriteWidth, spriteHeight
+    );
+  }
+
+  function updateFrame() {
+    drawSprite();
+
+    currentFrame++;
+    if (currentFrame >= totalFrames) {
+      clearInterval(animationInterval); // Para a animação
+
+      // Redireciona para outro template após 1 segundo
+      setTimeout(() => {
+        window.location.href = "{{ url_for('play') }}"; // Use o nome da rota, não o caminho do arquivo
+      }, 1000);
+    }
+  }
+
+  spriteSheet.onload = () => {
+    animationInterval = setInterval(updateFrame, frameSpeed);
+  };
+</script>
 </body>
 </html>

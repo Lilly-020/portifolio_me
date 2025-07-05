@@ -3,95 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
   <title>Me</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Comic+Relief:wght@400;700&family=Rubik+Moonrocks&display=swap');
-    
-    body {
-        background-color: rgb(76, 49, 104);
-    }
-
-    @keyframes piscar-sombra {
-    0%, 100% {
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    }
-
-    .canvas-row {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-    margin-top: 100px;
-    left: 550px;
-    width: 600px;
-    height: 200px;
-    border-radius: 100px;
-    background-color: rgba(81, 47, 92, 0.2);
-
-    /* animação aqui */
-    animation: piscar-sombra 2s infinite;
-    }
-
-
-    .canvas-container {
-      position: relative;
-    }
-
-    .canvas_conteiner1 {
-        position: relative;
-        left: 195px;
-        top: 100px;
-    }
-
-    .canvas_conteiner2 {
-        position: relative;
-        left: 30px;
-        top: 100px;
-    }
-
-    .hover-area {
-      position: absolute;
-      top: 95px;
-      left: 85px;
-      width: 53px;
-      height: 48px;
-      background-color: rgba(0, 0, 0, 0); /* invisível */
-      z-index: 10;
-      pointer-events: auto;
-    }
-
-    .hover-area a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-    }
-
-    @keyframes piscar-texto {
-    0%, 100% {
-        color: rgb(42, 9, 72);
-    }
-    50% {
-        color: rgb(51, 14, 85);
-    }
-    }
-
-    #titulo{
-        text-align: center;
-        font-size: 80px;
-        font-family: "Rubik Moonrocks", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: rgb(42, 9, 72);
-        /* animação aqui */
-        animation: piscar-texto 0.5s infinite;
-    }
-  </style>
 </head>
 <body>
   <div>
@@ -103,7 +16,7 @@
     <div class="canvas-container canvas_conteiner1">
       <canvas id="canvas1" width="448" height="448"></canvas>
       <div id="hover1" class="hover-area">
-        <a href="/templates/inicio.html"></a>
+        <a id = "clickMe"></a>
       </div>
     </div>
 
@@ -111,7 +24,7 @@
     <div class="canvas-container canvas_conteiner2">
       <canvas id="canvas2" width="448" height="448"></canvas>
       <div id="hover2" class="hover-area">
-        <a href="/templates/inicio.html"></a>
+        <a id = "clickMe2"></a>
       </div>
     </div>
   </div>
@@ -121,7 +34,7 @@
     const canvas1 = document.getElementById('canvas1');
     const ctx1 = canvas1.getContext('2d');
     const img1 = new Image();
-    img1.src = '../assets/happy.png';
+    img1.src = '../static/assets/happy.png';
     const SPRITE_WIDTH = 224;
     const SPRITE_HEIGHT = 448;
     let col1 = 0;
@@ -147,7 +60,7 @@
     const canvas2 = document.getElementById('canvas2');
     const ctx2 = canvas2.getContext('2d');
     const img2 = new Image();
-    img2.src = '../assets/sad.png';
+    img2.src = '../static/assets/sad.png';
     let col2 = 0;
 
     img2.onload = () => drawSprite2();
@@ -165,6 +78,20 @@
     hover2.addEventListener('mouseleave', () => {
       col2 = 0;
       drawSprite2();
+    });
+
+    const clickMe = document.getElementById('clickMe');
+    clickMe.style.cursor = 'pointer';  // muda o cursor pra indicar que é clicável
+
+    clickMe.addEventListener('click', () => {
+      window.location.href = "{{ url_for('inicio') }}";
+    });
+
+    const clickMe2 = document.getElementById('clickMe2');
+    clickMe2.style.cursor = 'pointer';  // muda o cursor pra indicar que é clicável
+
+    clickMe2.addEventListener('click', () => {
+      window.location.href = "{{ url_for('inicio') }}";
     });
   </script>
 </body>

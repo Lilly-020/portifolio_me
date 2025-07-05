@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Comic+Relief:wght@400;700&family=Rubik+Moonrocks&display=swap');
+    
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura total da tela */
+    margin: 0;
+    background-color: rgb(76, 49, 104);
+}
+
+.canvas-row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas_conteiner1 {
+    display: flex;
+    position: relative;
+    left: 80px;
+}
+
+.hover-area {
+    position: absolute;
+    top: 56px;
+    left: 22px;
+    width: 105px;
+    height: 48px;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.hover-area a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

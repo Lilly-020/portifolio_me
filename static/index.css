@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Comic+Relief:wght@400;700&family=Rubik+Moonrocks&display=swap');
+    
+body {
+    background-color: rgb(76, 49, 104);
+}
+
+@keyframes piscar-sombra {
+    0%, 100% {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+    50% {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+}
+
+.canvas-row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    margin-top: 100px;
+    left: 550px;
+    width: 600px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: rgba(81, 47, 92, 0.2);
+
+    /* animação aqui */
+    animation: piscar-sombra 2s infinite;
+}
+
+
+.canvas-container {
+    position: relative;
+}
+
+.canvas_conteiner1 {
+    position: relative;
+    left: 195px;
+    top: 100px;
+}
+
+.canvas_conteiner2 {
+    position: relative;
+    left: 30px;
+    top: 100px;
+}
+
+.hover-area {
+    position: absolute;
+    top: 95px;
+    left: 85px;
+    width: 53px;
+    height: 48px;
+    background-color: rgba(0, 0, 0, 0); /* invisível */
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.hover-area a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+@keyframes piscar-texto {
+    0%, 100% {
+        color: rgb(42, 9, 72);
+}
+    50% {
+        color: rgb(51, 14, 85);
+}
+}
+
+#titulo{
+    text-align: center;
+    font-size: 80px;
+    font-family: "Rubik Moonrocks", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(42, 9, 72);
+    /* animação aqui */
+    animation: piscar-texto 0.5s infinite;
+}
