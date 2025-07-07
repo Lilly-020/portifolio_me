@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  background-color: antiquewhite;
+  /* Remova position: fixed e height: 0 */
+}
+
+/* Footer fixo visível sempre no fundo da tela */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(100, 200, 255);
+  text-align: center;
+  padding: 10px;
+}
+
+#itens_footer{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#itens_tela{
+    position: absolute;
+    display: grid;
+    gap: 80px;
+    left: 30px;
+    top: 40px;
+}

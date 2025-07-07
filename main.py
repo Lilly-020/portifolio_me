@@ -11,13 +11,13 @@ def index():
 def inicio():
     return render_template('inicio.html')
 
-@app.route("/animation")
-def animation():
-    pass
-
 @app.route("/play")
 def play():
     return render_template('play.html')
+
+@app.route("/animation")
+def animation():
+    return render_template('note_animacao.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
