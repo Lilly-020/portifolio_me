@@ -152,3 +152,98 @@ div:hover .Pasta {
     margin: 10px;
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    height: 750px;
+  }
+
+  #itens_tela img {
+  width: 50px;
+  height: auto;
+}
+.container-pasta img {
+  width: 50px;
+  height: auto;
+}
+
+
+  /* Footer centralizado na parte inferior */
+  footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 400px;
+    padding: 10px;
+    height: auto;
+    border-radius: 30px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+
+  #itens_footer {
+    flex-wrap: wrap;
+    gap: 15px;
+    top: 0;
+  }
+
+  #itens_footer img {
+    width: 30px;
+    height: auto;
+    margin: 5px;
+  }
+
+  /* Reorganiza as janelas */
+  .floatWindow {
+    width: 95vw;
+    max-width: 380px;
+    height: 280px;
+    left: 50% !important;
+    top: 100px !important;
+    transform: translateX(-50%);
+  }
+
+  .window-header {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  .window-body {
+    height: 220px;
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  /* Pastas na tela */
+  #itens_tela {
+    position: relative;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    justify-items: center;
+    margin-top: 30px;
+    left: 0;
+    top: 0;
+    padding: 0 10px;
+  }
+
+  .container-pasta img {
+    width: 60px;
+    height: auto;
+  }
+
+  .Pasta a {
+    border-width: 2px;
+  }
+
+  /* Texto da janela mais responsivo */
+  .window-body {
+    font-size: 13px;
+    overflow-y: auto;
+  }
+}
