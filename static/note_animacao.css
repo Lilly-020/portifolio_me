@@ -247,3 +247,103 @@ div:hover .Pasta {
     overflow-y: auto;
   }
 }
+
+@media (max-width: 920px) {
+  body {
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+    padding-bottom: 100px;
+  }
+
+  /* FOOTER */
+  footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 500px;
+    padding: 12px;
+    border-radius: 30px;
+    background-color: rgba(147, 67, 221, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  #itens_footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #itens_footer img {
+    width: 40px;
+    height: auto;
+    margin: 6px;
+  }
+
+  /* JANELAS FLUTUANTES */
+.floatWindow {
+  width: 95vw;
+  max-width: 480px;
+  height: auto;
+  min-height: 320px;
+  left: 50% !important;
+  top: 60px !important;
+  transform: translateX(-50%);
+  z-index: 1000;
+  font-size: 16px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+  .window-header {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+
+  .window-body {
+  max-height: 400px;
+  font-size: 15px;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f7caf4;
+  line-height: 1.5;
+}
+
+
+  /* PASTAS NA TELA */
+  #itens_tela {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    align-items: start;
+    padding: 20px 10px;
+    margin-top: 40px;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+  .container-pasta {
+    width: 100px !important;
+    height: auto !important;
+  }
+
+  .container-pasta img {
+    width: 80px;
+    height: auto;
+  }
+
+  .Pasta a {
+    border-width: 2px;
+  }
+}
+
+
