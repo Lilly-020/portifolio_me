@@ -1,23 +1,33 @@
 body {
   margin: 0;
-  background-color: antiquewhite;
+  font-family: Arial, sans-serif;
+  background-image: url('../static/assets/cat.png');
+  background-size: cover;
+  
+  background-repeat: no-repeat;
   /* Remova position: fixed e height: 0 */
 }
 
 /* Footer fixo visível sempre no fundo da tela */
 footer {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgb(100, 200, 255);
+  bottom: 30px;
+  left: 700px;
+  height: 40px;
+  width: 700px;
+  background-color: rgba(147, 67, 221, 0.7);
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 10px;
+  border-radius: 50px;
 }
 
 #itens_footer{
     display: flex;
-    gap: 30px;
+    position: relative;
+    top: -5px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -29,3 +39,116 @@ footer {
     left: 30px;
     top: 40px;
 }
+
+.container-pasta {
+  position: relative;
+  display: inline-block; /* ou flex, depende do layout */
+}
+
+.Pasta {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.Pasta a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(198, 100, 255, 0.5);
+  border: 3px solid rgb(0, 0, 0);
+}
+
+
+div:hover .Pasta {
+  display: block;
+}
+
+
+.floatWindow {
+    display: none;
+    position: absolute;
+    width: 580px;
+    height: 300px;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0 #fff, -1px -1px 0 #000;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 13px;
+    z-index: 1000;
+  }
+
+  .window-header {
+    background-color: #7575d7;
+    color: white;
+    padding: 4px 6px;
+    font-weight: bold;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+  }
+
+  .close-btn {
+    background: #c08cbc;
+    color: black;
+    border: 2px outset #fff;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .close-btn:hover {
+    background: #800d6b;
+    color: white;
+  }
+
+  .window-body {
+    max-height: 250px;   /* altura máxima da área do conteúdo */
+    overflow-y: auto;    /* ativa scroll vertical se passar da altura */
+    padding: 10px;
+    height: 250px;
+    background: #f7caf4;
+    border-top: 2px inset #fff;
+    border-left: 2px inset #fff;
+    border-bottom: 2px outset #000;
+    border-right: 2px outset #000;
+  }
+
+  /* Estiliza a barra de rolagem (WebKit) */
+.window-body::-webkit-scrollbar {
+  width: 8px;            /* largura da barra */
+  background: transparent; /* fundo transparente */
+}
+
+.window-body::-webkit-scrollbar-track {
+  background: transparent; /* trilha transparente */
+}
+
+.window-body::-webkit-scrollbar-thumb {
+  background-color: #7575d7; /* azul claro */
+  border-radius: 4px;
+  border: 2px solid transparent; /* espaço entre thumb e track */
+  background-clip: content-box;
+}
+
+
+  footer {
+    margin-top: 50px;
+  }
+
+  #itens_footer img {
+    margin: 10px;
+    cursor: pointer;
+  }

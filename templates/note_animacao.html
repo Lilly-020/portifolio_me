@@ -1,34 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="{{ url_for('static', filename='note_animacao.css') }}">
   <title>Document</title>
+
 </head>
 <body>
   <div id="itens_tela">
-    <div>
+    <!-- ITEM 1 -->
+    <div class="container-pasta" style="width: 100px; height: 97px;">
       <img src="../static/assets/Pasta_60x57.png" alt="Pasta" width="100" height="97">
+      <div class="Pasta"><a class="openBtn" data-id="window1"></a></div>
     </div>
-    <div>
+    <div class="floatWindow" id="window1">
+      <div class="window-header">
+        <span>Contato</span>
+        <button class="close-btn">X</button>
+      </div>
+      <div class="window-body">
+        <img src="../static/assets/text_48x66.png" alt="Texto" width="48" height="56" class="openBtn" data-id="window10" style="cursor: pointer;">
+
+      </div>
+      <div class="floatWindow" id="window10">
+  <div class="window-header">
+    <span>Informações</span>
+    <button class="close-btn">X</button>
+  </div>
+  <div class="window-body">
+    <section>
+  <h2>Informações Pessoais</h2>
+  <ul>
+    <li><strong>Data de nascimento:</strong> 07/02/2005</li>
+    <li><strong>Endereço:</strong> R. Santa Inê, 301 - Bairro Rio Pequeno - Camburiú</li>
+    <li><strong>Telefone:</strong> (54) 99941-6322</li>
+    <li><strong>Email:</strong> <a href="mailto:lillycardoso098@gmail.com">lillycardoso098@gmail.com</a></li>
+    <li><strong>Inglês:</strong> Intermediário</li>
+    <li><strong>CNH:</strong> AB</li>
+    <li><strong>GitHub:</strong> <a href="https://github.com/Lilly-020" target="_blank" rel="noopener noreferrer">https://github.com/Lilly-020</a></li>
+  </ul>
+</section>
+
+  </div>
+</div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="container-pasta" style="width: 100px; height: 88px;">
       <img src="../static/assets/PastaVazia_60x48.png" alt="Pasta" width="100" height="88">
+      <div class="Pasta"><a class="openBtn" data-id="window2"></a></div>
     </div>
-    <div>
-      <img src="../static/assets/text_48x66.png" alt="Pasta" width="88" height="106">
+    <div class="floatWindow" id="window2">
+      <div class="window-header">
+        <span>Pasta</span>
+        <button class="close-btn">X</button>
+      </div>
+      <div class="window-body">
+      </div>
     </div>
-    <div>
+
+    <!-- ITEM 3 -->
+    <div class="container-pasta" style="width: 88px; height: 106px;">
+      <img src="../static/assets/text_48x66.png" alt="Texto" width="88" height="106">
+      <div class="Pasta"><a class="openBtn" data-id="window3"></a></div>
+    </div>
+    <div class="floatWindow" id="window3">
+      <div class="window-header">
+        <span>Quem eu sou?</span>
+        <button class="close-btn">X</button>
+      </div>
+      <div class="window-body">
+        <p style="font-size: 20px;">Sou estudante de Análise e Desenvolvimento de Sistemas, 
+          com 20 anos, focada em construir uma carreira sólida na área de tecnologia, especialmente em programação Python e desenvolvimento web. 
+          Busco constantemente ampliar meus conhecimentos e enfrentar novos desafios que impulsionem meu crescimento técnico e profissional.
+          Sou uma pessoa proativa, comprometida e colaborativa, que valoriza o trabalho em equipe e está sempre disposta a aprender e compartilhar conhecimento.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="container-pasta" style="width: 76px; height: 109px;">
       <img src="../static/assets/Perigo_36x69.png" alt="Pasta" width="76" height="109">
+      <div class="Pasta"><a class="openBtn" data-id="window4"></a></div>
+    </div>
+    <div class="floatWindow" id="window4">
+      <div class="window-header">
+        <span>Informações</span>
+        <button class="close-btn">X</button>
+      </div>
+      <div class="window-body">
+        <section>
+  <h2>Formação Acadêmica</h2>
+  <ul>
+    <li>Cursando Análise e Desenvolvimento de Sistemas – Unopar</li>
+    <li>Ensino Médio completo – Escola Estadual Professor Jacintho Silva</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Experiências Profissionais</h2>
+
+  <article>
+    <h3>WishBox – Itajaí</h3>
+    <p><strong>Cargo:</strong> Estagiária P&amp;D</p>
+    <p><strong>Período:</strong> 04/2025 – 05/2025</p>
+    <p><strong>Atividades:</strong> Estudar e desenvolver em cima da interface gráfica KlipperScreen.</p>
+  </article>
+
+  <article>
+    <h3>Prodoo – Balneário Camboriú</h3>
+    <p><strong>Cargo:</strong> Estagiária Desenvolvimento e Análise</p>
+    <p><strong>Período:</strong> 06/2025 – Até o momento</p>
+    <p><strong>Atividades:</strong> Desenvolver e atualizar funções web e de análise de dados.</p>
+  </article>
+</section>
+
+<section>
+  <h2>Habilidades</h2>
+  <ul>
+    <li>Comunicação</li>
+    <li>Facilidade em se adaptar a novas funções, aprende rápido</li>
+    <li>Proatividade</li>
+    <li>Python, CSS, HTML, SQL e JavaScript</li>
+    <li>Teoria: Metodologias Ágeis como SCRUM</li>
+    <li>Facilidade em trabalhar em equipes</li>
+  </ul>
+</section>
+      </div>
     </div>
   </div>
 
   <footer>
-    <div id="itens_footer">
-      <img src="../static/assets/JanelaW_26x34.png" alt="Window" width="26" height="34">
-      <img src="../static/assets/vscode_16x14.png" alt="vscode" width="36" height="34">
-      <img src="../static/assets/Music_24x26.png" alt="Music" width="36" height="34">
-    </div>
-    
-  </footer>
+  <div id="itens_footer">
+    <img src="../static/assets/JanelaW_26x34.png" alt="Window" width="26" height="34" class="footer-icon openBtn" data-id="windowFooter1" style="cursor: pointer;">
+    <img src="../static/assets/vscode_16x14.png" alt="vscode" width="36" height="34" class="footer-icon openBtn" data-id="windowFooter2" style="cursor: pointer;">
+    <img src="../static/assets/Music_24x26.png" alt="Music" width="36" height="34" class="footer-icon openBtn" data-id="windowFooter3" style="cursor: pointer;">
+  </div>
+</footer>
+
+<div class="floatWindow" id="windowFooter1">
+  <div class="window-header">
+    <span>Sair</span>
+    <button class="close-btn">X</button>
+  </div>
+  <div class="window-body">
+    <a href="{{ url_for('index') }}"
+  style="
+    display: block;
+    margin: 20px auto;
+    margin-top: 80px;
+    padding: 15px 40px;
+    background-color: #7575d7;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+  "
+>
+  Sair
+  </a>
+  </div>
+</div>
+
+<!-- <div class="floatWindow" id="windowFooter2">
+  <div class="window-header">
+    <span>vscode</span>
+    <button class="close-btn">X</button>
+  </div>
+  <div class="window-body">
+    <p>Você clicou no ícone do VS Code</p>
+  </div>
+</div>
+
+<div class="floatWindow" id="windowFooter3">
+  <div class="window-header">
+    <span>Música</span>
+    <button class="close-btn">X</button>
+  </div>
+  <div class="window-body">
+    <p>Janela de música 🎵</p>
+  </div>
+</div> -->
+
+  <script>
+    // Mostrar e esconder janelas com base no data-id
+    let janelaCount = 0;
+
+document.querySelectorAll('.openBtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.id;
+    const janela = document.getElementById(id);
+    if (janela && janela.style.display !== 'block') {
+      janela.style.display = 'block';
+      
+      // Cada nova janela abre deslocada da anterior
+      const offset = 30 * janelaCount;
+      janela.style.left = `${200 + offset}px`;
+      janela.style.top = `${200 + offset}px`;
+
+      janelaCount++;
+    }
+  });
+});
+
+    // Fechar janelas
+    document.querySelectorAll('.floatWindow .close-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.floatWindow').style.display = 'none';
+      });
+    });
+
+    // Drag & Drop simples (aplicado a todas as janelas)
+    document.querySelectorAll('.floatWindow .window-header').forEach(header => {
+      let isDragging = false;
+      let offsetX, offsetY;
+      const janela = header.parentElement;
+
+      header.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - janela.offsetLeft;
+        offsetY = e.clientY - janela.offsetTop;
+        document.body.style.userSelect = 'none';
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+        document.body.style.userSelect = '';
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          janela.style.left = `${e.clientX - offsetX}px`;
+          janela.style.top = `${e.clientY - offsetY}px`;
+        }
+      });
+    });
+
+    // Hover para mostrar/esconder botão "Pasta"
+const containers = document.querySelectorAll('.container-pasta');
+
+containers.forEach((container) => {
+  const pasta = container.querySelector('.Pasta');
+
+  container.addEventListener('mouseover', () => {
+    document.querySelectorAll('.Pasta').forEach(p => p.style.display = 'none');
+    pasta.style.display = 'block';
+  });
+
+  container.addEventListener('mouseout', () => {
+    pasta.style.display = 'none';
+  });
+});
+
+  </script>
 </body>
 </html>
